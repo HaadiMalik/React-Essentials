@@ -1,13 +1,17 @@
-function Header() {
+import componentsImg from "./assets/components.png";
+import JSXImg from "./assets/jsx-ui.png";
+import propsImg from "./assets/config.png";
+import stateImg from "./assets/state-mgmt.png";
+
+
+
+function CoreConcept(props) {
   return (
-    <header>
-      <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        Fundamental React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
+    <li>
+      <img src={props.image} alt={props.title} />
+      <h3> {props.title} </h3>
+      <p> {props.description} </p>
+    </li>
   );
 }
 
@@ -16,7 +20,31 @@ function App() {
     <div>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <h2> Core Concepts </h2>
+          <ul>
+            <CoreConcept
+              title="Components"
+              description="The core UI building blocks"
+              image={componentsImg}
+            />
+            <CoreConcept
+              title="JSX"
+              description="HTML(ish) code in JS"
+              image={JSXImg}
+            />
+            <CoreConcept
+              title="Props"
+              description="Configurable components"
+              image={propsImg}
+            />
+            <CoreConcept
+              title="State"
+              description="React managed data"
+              image={stateImg}
+            />
+          </ul>
+        </section>
       </main>
     </div>
   );

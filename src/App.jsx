@@ -3,17 +3,9 @@ import JSXImg from "./assets/jsx-ui.png";
 import propsImg from "./assets/config.png";
 import stateImg from "./assets/state-mgmt.png";
 
+import Header from "./components/Header.jsx";
+import CoreConcept from "./components/CoreConcept.jsx";
 
-
-function CoreConcept(props) {
-  return (
-    <li>
-      <img src={props.image} alt={props.title} />
-      <h3> {props.title} </h3>
-      <p> {props.description} </p>
-    </li>
-  );
-}
 
 function App() {
   return (

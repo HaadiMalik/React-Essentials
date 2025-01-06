@@ -1,4 +1,5 @@
 import reactAtom from "../assets/react-core-concepts.png";
+import "./Header.css";
 
 let concepts = ["Fundamental", "Core", "Advanced", "Important"];
 
@@ -7,7 +8,7 @@ function concept(max) {
   return concepts[num];
 }
 
-export function Header() {
+export default function Header() {
   return (
     <header>
       <img src={reactAtom} alt="Stylized atom" />

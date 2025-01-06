@@ -1,11 +1,6 @@
-import componentsImg from "./assets/components.png";
-import JSXImg from "./assets/jsx-ui.png";
-import propsImg from "./assets/config.png";
-import stateImg from "./assets/state-mgmt.png";
-
 import Header from "./components/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
-
+import { CORE_CONCEPTS } from "./data.js";
 
 function App() {
   return (
@@ -16,24 +11,24 @@ function App() {
           <h2> Core Concepts </h2>
           <ul>
             <CoreConcept
-              title="Components"
-              description="The core UI building blocks"
-              image={componentsImg}
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
+              image={CORE_CONCEPTS[0].image}
             />
             <CoreConcept
-              title="JSX"
-              description="HTML(ish) code in JS"
-              image={JSXImg}
+              title={CORE_CONCEPTS[1].title}
+              description={CORE_CONCEPTS[1].description}
+              image={CORE_CONCEPTS[1].image}
             />
             <CoreConcept
-              title="Props"
-              description="Configurable components"
-              image={propsImg}
+              title={CORE_CONCEPTS[2].title}
+              description={CORE_CONCEPTS[2].description}
+              image={CORE_CONCEPTS[2].image}
             />
             <CoreConcept
-              title="State"
-              description="React managed data"
-              image={stateImg}
+              title={CORE_CONCEPTS[3].title}
+              description={CORE_CONCEPTS[3].description}
+              image={CORE_CONCEPTS[3].image}
             />
           </ul>
         </section>

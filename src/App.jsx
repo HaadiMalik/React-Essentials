@@ -1,6 +1,7 @@
 import Header from "./components/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import { CORE_CONCEPTS } from "./data.js";
+import TabButton from "./components/TabButton.jsx";
 
 function App() {
   return (
@@ -23,6 +24,15 @@ function App() {
               image={CORE_CONCEPTS[3].image}
             />
           </ul>
+        </section>
+        <section id="examples">
+          <h2> Examples </h2>
+          <menu>
+            <TabButton label="Components" />
+            <TabButton label="JSX" />
+            <TabButton label="Props" />
+            <TabButton label="State" />
+          </menu>
         </section>
       </main>
     </div>

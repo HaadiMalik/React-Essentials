@@ -1,7 +1,7 @@
 export default function TabButton(props) {
     return (
         <li>
-            <button>{props.label}</button>
+            <button onClick={props.handleClick}>{props.name}</button>
         </li>
     );
 }

@@ -2,13 +2,25 @@ import { useState } from "react";
 
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
-import { CORE_CONCEPTS } from "./data.js";
+import { EXAMPLES, CORE_CONCEPTS } from "./data.js";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  const [selectedButton, setSelectedButton] = useState("");
+  let tabContent = <p> Please select a topic </p>;
 
-  const [ selectedButton , setSelectedButton ] = useState("Please select a tab");
-  
+  if (selectedButton) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedButton].title}</h3>
+        <p>{EXAMPLES[selectedButton].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedButton].code}</code>
+        </pre>
+      </div>
+    );
+  }
+
   function handleClick(selectedTab) {
     setSelectedButton(selectedTab);
   }
@@ -39,22 +51,30 @@ function App() {
           <menu>
             <TabButton
               name="Components"
-              handleClick={() => {handleClick("Components")}}
+              handleClick={() => {
+                handleClick("components");
+              }}
             />
             <TabButton
               name="JSX"
-              handleClick={() => {handleClick("JSX")}}
+              handleClick={() => {
+                handleClick("jsx");
+              }}
             />
             <TabButton
               name="Props"
-              handleClick={() => {handleClick("Props")}}
+              handleClick={() => {
+                handleClick("props");
+              }}
             />
             <TabButton
               name="State"
-              handleClick={() => {handleClick("State")}}
+              handleClick={() => {
+                handleClick("state");
+              }}
             />
           </menu>
-          {selectedButton}
+          {tabContent}
         </section>
       </main>
     </div>
